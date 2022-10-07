@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 6 html</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="jumbotron">
+
+        <a href="https://github.com/altair-1" target="_blank"><img
+                src="https://www.oracle.com/oce/press/assets/CONTE5A2A714E4DD487A92751F67B999CDC8/native/og-social-altair-logo.jpg" width="100px" height="50px"
+                style="float: left; margin-right: 8px;"></a>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f1a2e4bca5a6f1c30bb816b/1603796135109-AEQSUN0CP3RXFRFN7VTY/MAHE+Manipal+loo+for+digital+use+-+Archana+Nayak.png"
+            width="140px" height="50px" style="float:inline-end;">
+        <p>altair-1</p>
+        <a href="https://github.com/altair-1" target="_blank" style="color: orange;">github</a>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png"
+        width="300px" height="300px" style="float: inline-end; margin-top: 15px;" usemap="#microsoftImgMap">
+
+    <map name="microsoftImgMap">
+        <area shape="rect" coords="10,10,145,145" href="https://www.google.com/search?q=red+color" target="_blank">
+        <area shape="rect" coords="155,10,290,145" href="https://www.google.com/search?q=green+color" target="_blank">
+        <area shape="rect" coords="10,155,145,290" href="https://www.google.com/search?q=blue+color" target="_blank">
+        <area shape="rect" coords="155,155,290,290" href="https://www.google.com/search?q=yellow+color" target="_blank">
+    </map>
+
+    <h1>this is heading 1</h1>
+    <h2>this is heading 2</h2>
+    <h3>this is heading 3</h3>
+    <h4>this is heading 4</h4>
+    <h5>this is heading 5</h5>
+    <h6>this is heading 6</h6>
+    <div>
+        <p>this is inside div1</p>
+        <p style="color:rgb(253, 155, 7)">this is a paragraph inside the html webpage built for lab 6 in the <br> open
+            source technologies lab (ostl)</p>
+    </div>
+    <div style="direction:rtl">
+        <p>this is inside div2, and right aligned</p>
+        <pre>this is some preformatted text</pre>
+        <del>deleted text</del>
+        <ins>inserted text</ins>
+        <span>this is some unstyled span text</span>
+    </div>
+    <div style="display: flex;">
+        <div style="inline-size: 70%;">
+            <table border="1px" width="80%" style="border-spacing: 5px;">
+                <caption>table caption</caption>
+                <tr>
+                    <td style="padding: 10px;">(0,0)</td>
+                    <td style="padding: 10px;">(0,1)</td>
+                    <td rowspan="2" style="padding: 10px;">column 3</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">(1,0)</td>
+                    <td style="padding: 10px;">(1,1)</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="padding: 10px;">row 3</td>
+                </tr>
+            </table>
+        </div>
+        <div style="inline-size: 30%;">
+            <ul>
+                <li>list item 1</li>
+                <li>list item 2</li>
+            </ul>
+            <ol>
+                <li>list item 1</li>
+                <li>list item 2</li>
+            </ol>
+            <dl>
+                <dt>list item 1</dt>
+                <dd>details of the item</dd>
+                <dt>list item 2</dt>
+                <dd>details of the item</dd>
+            </dl>
+        </div>
+
+
+    </div>
+    <div style="display: flex;">
+        <form style="inline-size: 55%;">
+            <fieldset>
+                <legend>user details</legend>
+                <label for="name">username :</label><br>
+                <input id="name" type="text"><br>
+                <label for="pwd">password :</label><br>
+                <input id="pwd" type="password">
+            </fieldset>
+            <p>do you agree to the terms and conditions?</p>
+            <input type="radio" id="agree" name="termsAndConditions" value="Agree">
+            <label for="agree">agree</label><br>
+            <input type="radio" id="disagree" name="termsAndConditions" value="Disagree">
+            <label for="disagree">disagree</label>
+            <label style="margin-left: 30px;" for="useless">drop</label>
+            <select name="useless" id="useful">
+                <option value="Down">down</option>
+                <option value="list">list</option>
+            </select><br>
+            <label for="textArea">type anything here :</label>
+            <textarea id="textArea" name="textArea" rows="1" cols="20">sample text</textarea><br>
+            <input style="width: 100px; margin-top: 2px;background-color : orange;" type="submit" value="submit">
+            <input type="checkbox" id="remember" name="staySignedIn" value="Yes">
+            <label for="remember">remember me?</label><br>
+            <input style="width: 100px; background-color: cadetblue; margin-top: 3px;" type="reset" value="reset">
+        </form>
+        <div style="margin-left: 20px;margin-right: 20px; inline-size: auto ;">
+            <canvas id="myCanvas" width="auto" height="auto" style="border:1px solid #ee7e7e; color: azure;">
+            </canvas>
+        </div>
+    </div>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(100, 100);
+        ctx.strokeStyle = '#ffffff';
+        ctx.stroke();
+    </script>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        var grad = ctx.createRadialGradient(20, 10, 10, 80, 50, 100);
+        grad.addColorStop(0, "blue");
+        grad.addColorStop(1, "white");
+
+        ctx.beginPath();
+        ctx.arc(120, 50, 40, 0, 2 * Math.PI);
+        ctx.strokeStyle = 'cyan'
+        ctx.fillStyle = grad;
+        ctx.fill();
+        ctx.stroke();
+
+    </script>
+    <script>
+        // arc
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(50, 80, 10, 60, 2 * Math.PI);
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    </script>
+    <script>
+        var c = document.getElementById('myCanvas');
+        var ctx = c.getContext("2d");
+        ctx.moveTo(100, 100);
+
+        var grad = ctx.createLinearGradient(10, 30, 300, 0);
+        grad.addColorStop(0, "blue");
+        grad.addColorStop(1, "white");
+
+        ctx.fillStyle = grad;
+        ctx.fillRect(100, 100, 160, 40);
+    </script>
+</body>
+
+</html>
