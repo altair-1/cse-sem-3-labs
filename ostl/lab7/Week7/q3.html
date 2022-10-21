@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" /> <!-- reset css -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<style>
+    body{ background-color: ivory; }
+    canvas{border:1px solid blue;}
+</style>
+<script>
+$(function(){
+
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+
+    // a flag to let you stop the animation
+    var ok2animate=true;
+
+
+    // a Drop pseudo-class
+    // Properties: current x,y & the speed at which this drop falls
+    function Drop(){
+        this.x=Math.random()*(canvas.width-20);
+        this.y=-Math.random()*20;
+        this.fallRate=1;
+    }
+    // draw this drop on the canvas
+    Drop.prototype.draw=function(){
+        ctx.beginPath();
+        ctx.moveTo(this.x-5,this.y);
+        ctx.lineTo(this.x,this.y-7);
+        ctx.lineTo(this.x+5,this.y);
+        ctx.arc(this.x,this.y,5,0,Math.PI);
+        ctx.closePath();
+        ctx.fill();
+        return(this);    
+    }
+    // make this drop "fall" 
+    Drop.prototype.fall=function(){
+        this.y+=this.fallRate;
+        return(this);
+    }
+
+    // an animation loop to make some test drops fall 
+    function animate(){
+
+        // request another animation frame
+        if(ok2animate){
+            requestAnimationFrame(animate);
+        }
+
+        // fill the canvas with the orange background
+        ctx.fillStyle="black";
+        ctx.fillRect(0,0,canvas.width,canvas.height)
+
+        // make all drops fall and then redraw them
+        ctx.fillStyle="blue";
+        for(var i=0;i<drops.length;i++){
+            drops[i].fall().draw();
+        }
+
+    }
+
+    // let the user stop the animation
+    $("#stop").click(function(){
+        ok2animate=false;
+    });
+
+
+
+    // an array of objects each representing 1 drop
+    var drops=[];
+
+    // add some test drops
+    for(var i=0;i<10;i++){
+        drops.push(new Drop());    
+    }
+
+    // start the animation
+    requestAnimationFrame(animate);
+
+
+}); // end $(function(){});
+</script>
+</head>
+<body>
+    <button id="stop">Stop</button><br>
+    <canvas id="canvas" width=300 height=300></canvas>
+</body>
+</html>
