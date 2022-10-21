@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rectangle example</title>
+</head>
+<body>
+<canvas id="demoCanvas" width="500" height="600"></canvas> 
+<script>
+var canvas = document.getElementById("demoCanvas");
+if (canvas.getContext) 
+{
+  var rtx = canvas.getContext('2d');
+  rtx.fillStyle='#fa4b2a';    // color of fill
+  rtx.fillRect(10,40,140,160); // create rectangle  
+}
+var canvas = document.getElementById("demoCanvas");
+if (canvas.getContext)
+{
+  var btx = canvas.getContext('2d')
+  btx.fillStyle='#0000FF';
+  btx.rotate(30 * Math.PI / 180);
+  btx.fillRect(75,10,140,160)
+}
+</script>
+</body> 
+</html>
