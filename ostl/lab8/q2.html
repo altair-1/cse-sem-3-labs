@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+</head>
+<body>
+    <script>
+        inp = prompt('enter array');
+        var inputArray = inp.split(' ');
+        var sum=0;
+        var product = 1;
+        for (var i = 0; i < inputArray.length; i++) {
+            elem = parseInt(inputArray[i]);
+            sum += elem;
+            product *= elem;
+        }
+        alert("sum = "+sum+"\nproduct = "+product);
+    </script>
+</body>
+</html>
