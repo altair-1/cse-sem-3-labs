@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>q4</title>
+<script src="angular.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+the months are<br>
+<select Name="Months" Size="3">
+<option ng-repeat="x in Months">
+{{ x.name }}
+</option>
+</select>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function ($scope) {
+$scope.Months = [
+{ name: 'January' },
+{ name: 'February' },
+{ name: 'March' },
+{ name: 'April' },
+{ name: 'May' },
+{ name: 'June' },
+{ name: 'July' },
+{ name: 'August' },
+{ name: 'September' },
+{ name: 'October' },
+{ name: 'November' },
+{ name: 'December' }
+];
+});
+</script>
+</body>
+</html>
